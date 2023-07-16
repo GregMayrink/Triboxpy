@@ -4,7 +4,7 @@ import altair as alt
 from PIL import Image
 
 # Load data function
-@st.cache
+@st.cache_data
 def main():
     df = pd.read_excel(
         io="tribox_dados_substrato.xlsx",
