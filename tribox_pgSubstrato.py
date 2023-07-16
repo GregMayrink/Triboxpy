@@ -1,0 +1,56 @@
+import streamlit as st
+import pandas as pd
+import altair as alt
+from PIL import Image
+
+# Load data function
+@st.cache
+def load_data():
+    df = pd.read_excel(
+        io="tribox_dados_substrato.xlsx",
+        engine="openpyxl",
+        sheet_name="Plan1",
+        usecols="A:G",
+        nrows=100 
+    )
+    return df
+
+# Load data
+df = load_data()
+
+# Sidebar
+with st.sidebar:
+    st.title('Monitoramento TriBox')
+    logo = Image.open('favicon (1).ico') 
+    st.image(logo, use_column_width=True)
+    st.subheader('Filtros')
+
+    # Filtering options
+    fbox = st.multiselect('BOX', options=df['box'].unique())
+    fcliente = st.selectbox('CLIENTE', options=df['cliente'].unique())
+    flote = st.selectbox('LOTE', options=df['lote'].unique())
+    ftratamentos = st.multiselect('TRATAMENTOS', options=df['tratamentos'].unique())
+    fvar = st.multiselect('VARIAVEIS', options=df['var'].unique())
+
+# Apply filters
+filtered_data = df.loc[
+    (df['box'].isin(fbox)) &
+    (df['cliente'] == fcliente) &
+    (df['lote'] == flote) &
+    (df['tratamentos'].isin(ftratamentos)) &
+    (df['var'].isin(fvar))
+]
+
+# Line chart
+if not filtered_data.empty:
+    chart = alt.Chart(filtered_data).mark_line().encode(
+        x='data:T',
+        y='valor:Q',
+        color='tratamentos:N',
+        strokeWidth=alt.value(3)
+    )
+    st.header('Linha do tempo')
+    st.markdown(fvar)
+    st.altair_chart(chart)
+else:
+    st.warning('Nenhum dado encontrado com os filtros selecionados.')
