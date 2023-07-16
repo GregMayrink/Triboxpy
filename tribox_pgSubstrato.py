@@ -2,14 +2,14 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from PIL import Image
-import openpyxl as open
+import openpyxl as abrir
 
 # Load data function
 @st.cache_data
 def main():
     df = pd.read_excel(
         io="tribox_dados_substrato.xlsx",
-        engine= open,
+        engine= abrir,
         sheet_name="Plan1",
         usecols="A:G",
         nrows=100 
