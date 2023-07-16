@@ -5,7 +5,7 @@ from PIL import Image
 
 # Load data function
 @st.cache
-def load_data():
+def main():
     df = pd.read_excel(
         io="tribox_dados_substrato.xlsx",
         engine="openpyxl",
@@ -16,7 +16,7 @@ def load_data():
     return df
 
 # Load data
-df = load_data()
+df = main()
 
 # Sidebar
 with st.sidebar:
