@@ -7,13 +7,7 @@ import openpyxl as abrir
 # Load data function
 @st.cache_data
 def main():
-    df = pd.read_excel(
-        io="tribox_dados_substrato.xlsx",
-        engine= abrir,
-        sheet_name="Plan1",
-        usecols="A:G",
-        nrows=100 
-    )
+    df = pd.read_excel(tribox_dados_substrato.xlsx)
     return df
 
 # Load data
