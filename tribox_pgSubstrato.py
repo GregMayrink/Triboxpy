@@ -16,7 +16,7 @@ def import_xls_file():
     return None
 
 # Sidebar
-st.sidebar.title('Monitoramento TriBox')
+#st.sidebar.title('Monitoramento TriBox')
 logo = Image.open('favicon (1).ico') 
 st.sidebar.image(logo, use_column_width=True)
 st.sidebar.subheader('Filtros')
