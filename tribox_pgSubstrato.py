@@ -5,8 +5,9 @@ from PIL import Image
 
 # Load data function
 @st.cache_data
+file = st.file_uploader("tribox_dados_substrato.xlsx", type=["xls", "xlsx"])
 def import_xls_file():
-    file = st.file_uploader("tribox_dados_substrato.xlsx", type=["xls", "xlsx"])
+    
     if file is not None:
         try:
             df = pd.read_excel(file)
@@ -21,8 +22,6 @@ logo = Image.open('favicon (1).ico')
 st.sidebar.image(logo, use_column_width=True)
 st.sidebar.subheader('Filtros')
 
-# Load data
-df = import_xls_file()
 
 if df is not None:
     # Filtering options
