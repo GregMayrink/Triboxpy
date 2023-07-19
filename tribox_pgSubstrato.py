@@ -18,12 +18,6 @@ def import_xls_file():
 df = import_xls_file()
 
 
-# Sidebar
-st.sidebar.title('Monitoramento TriBox')
-logo = Image.open('favicon (1).ico') 
-st.sidebar.image(logo, use_column_width=True)
-st.sidebar.subheader('Filtros')
-
 
 with st.sidebar:
     st.title('Monitoramento TriBox')
