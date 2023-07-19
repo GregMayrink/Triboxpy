@@ -19,7 +19,7 @@ def import_xls_file():
 #st.sidebar.title('Monitoramento TriBox')
 logo = Image.open('favicon (1).ico') 
 st.sidebar.image(logo, use_column_width=True)
-st.sidebar.subheader('Filtros')
+st.sidebar.subheader('Filtros'
 
 # Load data8
 df = import_xls_file()
