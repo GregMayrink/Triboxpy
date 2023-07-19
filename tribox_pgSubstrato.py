@@ -25,7 +25,7 @@ st.sidebar.subheader('Filtros')
 df = import_xls_file()
 
 with st.sidebar:
-    st.title('Monitoramento TriBox')
+  #  st.title('Monitoramento TriBox')
     logo = Image.open('favicon (1).ico') 
     st.image(logo, use_column_width=True)
     st.subheader('Filtros')
