@@ -4,7 +4,7 @@ import altair as alt
 from PIL import Image
 
 # Load data function
-@st.cache
+@st.cache_data
 def import_xls_file():
     file = st.file_uploader("tribox_dados_substrato.xlsx", type=["xls", "xlsx"])
     if file is not None:
