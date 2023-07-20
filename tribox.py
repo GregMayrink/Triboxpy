@@ -21,7 +21,7 @@ colunasUteis = ['box','tratamentos','cliente','data', 'lote', 'var', "valor"]
 df = df[colunasUteis]
 
 with st.sidebar:
-    st.subheader('TriBox')
+    st.title('TriBox - Monitoramento')
     logo = Image.open('favicon (1).ico') 
     st.image(logo, use_column_width=True)
     st.subheader('Filtros')
