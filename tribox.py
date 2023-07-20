@@ -48,7 +48,7 @@ with st.sidebar:
         strokeWidth=alt.value(3)
 
         ).properties(
-    width=600,  # Largura do gráfico em pixels
+    width=800,  # Largura do gráfico em pixels
     height=400  # Altura do gráfico em pixels
 
     
