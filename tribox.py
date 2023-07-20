@@ -46,6 +46,11 @@ with st.sidebar:
         y='valor:Q',
         color='tratamentos:N',
         strokeWidth=alt.value(3)
+
+        ).properties(
+    width=600,  # Largura do gráfico em pixels
+    height=400  # Altura do gráfico em pixels
+
     
 
     
